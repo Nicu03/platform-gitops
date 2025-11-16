@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-react-full-stack
+  labels:
+    app: simple-react-full-stack
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simple-react-full-stack
+  template:
+    metadata:
+      labels:
+        app: simple-react-full-stack
+    spec:
+      containers:
+      - name: simple-react-full-stack
+        image: nicus98/simple-react-full-stack:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
