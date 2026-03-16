@@ -4,7 +4,8 @@ metadata:
   name: simple-react-full-stack
 spec:
   rules:
-    - http:
+    - host: react.local
+      http:
         paths:
           - path: /
             pathType: Prefix
