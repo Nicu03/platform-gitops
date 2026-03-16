@@ -3,12 +3,6 @@ kind: Application
 metadata:
   name: simple-react-full-stack
   namespace: argocd
-  annotations:
-    argocd-image-updater.argoproj.io/image-list: app=nicus98/simple-react-full-stack
-    argocd-image-updater.argoproj.io/app.update-strategy: latest
-    argocd-image-updater.argoproj.io/app.allow-tags: "regexp:^[0-9a-f]{7}$"
-    argocd-image-updater.argoproj.io/write-back-method: git:secret:argocd/git-creds
-    argocd-image-updater.argoproj.io/git-branch: main
 spec:
   project: default
   source:
