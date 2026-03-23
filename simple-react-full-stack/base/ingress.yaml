@@ -2,7 +2,13 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: simple-react-full-stack
+  annotations:
+    cert-manager.io/cluster-issuer: selfsigned-issuer
 spec:
+  tls:
+    - hosts:
+        - react.local
+      secretName: react-local-tls
   rules:
     - host: react.local
       http:
