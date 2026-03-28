@@ -1,0 +1,3 @@
+kustomize:
+  images:
+  - nicus98/simple-react-full-stack=nicus98/simple-react-full-stack:v1.0.0
