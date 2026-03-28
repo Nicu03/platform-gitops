@@ -1,0 +1,3 @@
+kustomize:
+  images:
+  - nicus98/simple-flask-app=nicus98/simple-flask-app:e6952c9
