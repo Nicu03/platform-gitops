@@ -1,0 +1,20 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: simple-flask-app
+spec:
+  tls:
+    - hosts:
+        - flask.prod.local
+      secretName: flask-prod-local-tls
+  rules:
+    - host: flask.prod.local
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: simple-flask-app
+                port:
+                  number: 80

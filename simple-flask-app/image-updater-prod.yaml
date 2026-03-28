@@ -1,0 +1,21 @@
+apiVersion: argocd-image-updater.argoproj.io/v1alpha1
+kind: ImageUpdater
+metadata:
+  name: simple-flask-app-prod
+  namespace: argocd
+spec:
+  applicationRefs:
+    - namePattern: simple-flask-app-prod
+      images:
+        - alias: app
+          imageName: nicus98/simple-flask-app
+          commonUpdateSettings:
+            updateStrategy: semver
+            allowTags: "regexp:^v[0-9]+\\.[0-9]+\\.[0-9]+$"
+          manifestTargets:
+            kustomize:
+              name: nicus98/simple-flask-app
+      writeBackConfig:
+        method: git
+        gitConfig:
+          branch: main
