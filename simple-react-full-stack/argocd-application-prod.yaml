@@ -1,17 +1,17 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: simple-react-full-stack
+  name: simple-react-full-stack-prod
   namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/Nicu03/platform-gitops.git
     targetRevision: main
-    path: simple-react-full-stack/overlays/dev
+    path: simple-react-full-stack/overlays/prod
   destination:
     server: https://kubernetes.default.svc
-    namespace: simple-react
+    namespace: simple-react-prod
   syncPolicy:
     automated:
       prune: true

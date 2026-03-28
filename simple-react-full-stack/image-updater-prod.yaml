@@ -1,17 +1,17 @@
 apiVersion: argocd-image-updater.argoproj.io/v1alpha1
 kind: ImageUpdater
 metadata:
-  name: simple-react-full-stack-dev
+  name: simple-react-full-stack-prod
   namespace: argocd
 spec:
   applicationRefs:
-    - namePattern: simple-react-full-stack
+    - namePattern: simple-react-full-stack-prod
       images:
         - alias: app
           imageName: nicus98/simple-react-full-stack
           commonUpdateSettings:
-            updateStrategy: newest-build
-            allowTags: "regexp:^[0-9a-f]{7}$"
+            updateStrategy: semver
+            allowTags: "regexp:^v[0-9]+\\.[0-9]+\\.[0-9]+$"
           manifestTargets:
             kustomize:
               name: nicus98/simple-react-full-stack

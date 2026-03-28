@@ -1,0 +1,6 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simple-react-full-stack
+spec:
+  replicas: 1
