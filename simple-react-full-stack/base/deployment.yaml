@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: simple-react-full-stack
-        image: nicus98/simple-react-full-stack:c7ea4b9
+        image: nicus98/simple-react-full-stack:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080

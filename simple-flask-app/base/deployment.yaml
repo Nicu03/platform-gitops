@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: simple-flask-app
-        image: nicus98/simple-flask-app:e6952c9
+        image: nicus98/simple-flask-app:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 5000
